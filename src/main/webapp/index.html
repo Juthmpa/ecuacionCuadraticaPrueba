@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Cuadrática</title>
+</head>
+<body>
+<h1>Calculadora de Ecuación Cuadrática</h1>
+<h2>$ax^2 + bx + c = 0$</h2>
+
+<form action="EcuacionServlet" method="post">
+    <label for="a">Parámetro **a**:</label>
+    <input type="number" step="any" name="a" required><br><br>
+
+    <label for="b">Parámetro **b**:</label>
+    <input type="number" step="any" name="b" required><br><br>
+
+    <label for="c">Parámetro **c**:</label>
+    <input type="number" step="any" name="c" required><br><br>
+
+    <input type="submit" value="Calcular Raíces">
+</form>
+
+<%
+// Mostrar mensaje de error si existe (viene del Servlet)
+String error = (String) request.getAttribute("error");
+if (error != null) {
+out.println("<p style='color: red; font-weight: bold;'>" + error + "</p>");
+}
+%>
+</body>
+</html>
