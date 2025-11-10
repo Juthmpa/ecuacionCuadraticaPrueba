@@ -1,16 +1,17 @@
 package controllers;
 
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import models.Ecuacion;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfWriter;
 import services.EcuacionServices;
 
 import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
 
 @WebServlet("/EcuacionServletPDF")
 public class EcuacionServletPDF extends HttpServlet {

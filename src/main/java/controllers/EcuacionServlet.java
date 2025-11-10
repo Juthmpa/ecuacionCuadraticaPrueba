@@ -5,13 +5,13 @@ import services.EcuacionServices;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("ecuacionCuadraticaPrueba/EcuacionServlet")
+@WebServlet("/EcuacionServlet")
 public class EcuacionServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private EcuacionServices servicio = new EcuacionServices();
@@ -101,7 +101,7 @@ public class EcuacionServlet extends HttpServlet {
         // Imprimir el resultado HTML generado por el Servicio
         out.println(ecuacion.getResultado());
 
-        out.println("<p><a href='" + urlPDF + "' target='_blank'>**Descargar resultado en PDF**</a></p>");
+        out.println("<p><a href='" + urlPDF + "' target='_blank'> Descargar resultado en PDF</a></p>");
         out.println("<p><a href='EcuacionServlet'>Volver al formulario</a></p>"); // Link apunta al Servlet
         out.println("</body></html>");
     }
